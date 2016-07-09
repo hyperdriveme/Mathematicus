@@ -77,3 +77,90 @@ public prefix func -(x: Quaternion) -> Quaternion {
 public func -(lhs: Quaternion, rhs: Quaternion) -> Quaternion {
 	return lhs + (-rhs)
 }
+
+public func *(lhs: Quaternion, rhs: Quaternion) -> Quaternion {
+	let w1 = lhs.w
+	let w2 = rhs.w
+	let x1 = lhs.x
+	let x2 = rhs.x
+	let y1 = lhs.y
+	let y2 = rhs.y
+	let z1 = lhs.z
+	let z2 = rhs.z
+	
+	let w = w1 * w2 - x1 * x2 - y1 * y2 - z1 * z2
+	let x = w1 * x2 + w2 * x1 + y1 * z2 - y2 * z1
+	let y = w1 * y2 + w2 * y1 + z1 * x2 - z2 * x1
+	let z = w1 * z2 + w2 * z1 + x1 * y2 - x2 * y1
+	
+	return Quaternion(fromExplictFormW: w, x: x, y: y, z: z)
+}
+
+public func ==(lhs: Quaternion, rhs: Quaternion) -> Bool {
+	let a = lhs.w == rhs.w && lhs.x == rhs.x
+	let b = lhs.y == rhs.y && lhs.z == rhs.z
+	return a && b
+}
+
+public extension Quaternion {
+	public var absolute: Double {
+		let sd = w*w + x*x + y*y + z*z
+		return sqrt(sd)
+	}
+	
+	public var conjugate: Quaternion {
+		return Quaternion(fromExplictFormW: w, x: -x, y: -y, z: -z)
+	}
+	
+	public func scale(at x: Double) -> Quaternion {
+		let a = self.w * x
+		let b = self.x * x
+		let c = self.y * x
+		let d = self.z * x
+		return Quaternion(fromExplictFormW: a, x: b, y: c, z: d)
+	}
+	
+	public var inverse: Quaternion {
+		let n = self.absolute
+		let nd = n * n
+		let s = 1.0 / nd
+		let cj = self.conjugate
+		return cj.scale(at: s)
+	}
+}
+
+public extension Quaternion {
+	public static func realNumber(d: Double) -> Quaternion {
+		return Quaternion(fromExplictFormW: d, x: 0, y: 0, z: 0)
+	}
+}
+
+public extension Quaternion {
+	public static var zero = Quaternion.realNumber(0)
+	
+	public static var identity = Quaternion.realNumber(1)
+	
+	public static func randomElement() -> Quaternion {
+		let w = Double.randomElement()
+		let x = Double.randomElement()
+		let y = Double.randomElement()
+		let z = Double.randomElement()
+		return Quaternion(fromExplictFormW: w, x: x, y: y, z: z)
+	}
+}
+
+extension Quaternion: Number {
+	
+}
+
+extension Quaternion: Continuum {
+	
+}
+
+extension Quaternion: AlgebraicComplete {
+	
+}
+
+extension Quaternion: ComplexLikeSystem {
+	
+}
