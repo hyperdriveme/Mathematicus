@@ -18,9 +18,9 @@
 import Foundation
 
 struct OrdinaryDifferentialEquation<Field: Continuum> {
-	let equations: Vector<Field> -> Vector<Field>
-	let initial: Vector<Field>
-	let dimension: Int
+	private let equations: Vector<Field> -> Vector<Field>
+	private let initial: Vector<Field>
+	private let dimension: Int
 	
 	init(dimension: Int, initial: Vector<Field>, equations: Vector<Field> -> Vector<Field>) {
 		guard initial.contents.count == dimension else {
