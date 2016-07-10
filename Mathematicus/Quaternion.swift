@@ -130,7 +130,7 @@ public extension Quaternion {
 }
 
 public extension Quaternion {
-	public static func realNumber(d: Double) -> Quaternion {
+	public static func realNumber(_ d: Double) -> Quaternion {
 		return Quaternion(fromExplictFormW: d, x: 0, y: 0, z: 0)
 	}
 }

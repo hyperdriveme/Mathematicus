@@ -14,6 +14,7 @@
 // KIND, either express or implied.  See the License for the
 // 	specific language governing permissions and limitations
 // under the License.
+
 import Foundation
 
 public struct Vector<Field: Number> {
@@ -21,14 +22,14 @@ public struct Vector<Field: Number> {
 }
 
 public extension Vector {
-	public func vectorizeOperation(o: Field -> Field) -> (Vector<Field> -> Vector<Field>) {
+	public func vectorizeOperation(_ o: (Field) -> Field) -> ((Vector<Field>) -> Vector<Field>) {
 		return {
 			let t = $0.contents.map(o)
 			return Vector<Field>(contents: t)
 		}
 	}
 	
-	public func vectorizeOperation(o: (Field, Field) -> Field) -> ((Vector<Field>, Vector<Field>) -> Vector<Field>) {
+	public func vectorizeOperation(_ o: (Field, Field) -> Field) -> ((Vector<Field>, Vector<Field>) -> Vector<Field>) {
 		return {v1, v2 in
 			let t = zip(v1.contents, v2.contents)
 			let r = t.map(o)
@@ -85,4 +86,15 @@ public extension Vector where Field: Continuum {
 		let newcontent = self.contents.map{ $0 * x }
 		return Vector<Field>(contents: newcontent)
 	}
+}
+
+public extension Vector {
+    public subscript (n: Int) -> Field {
+        get {
+            return self.contents[n]
+        }
+        set {
+            self.contents[n] = newValue
+        }
+    }
 }

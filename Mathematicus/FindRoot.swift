@@ -35,7 +35,7 @@ public extension Polynomial where Field: NewtonMethodAppliable {
 		var count = 0
 		var poly = self
 		while poly.evaluate(at: x).absolute < eps {
-			for i in (0..<poly.maxexp).reverse() {
+			for i in (0..<poly.maxexp).reversed() {
 				if let c = poly.coffcient[i + 1] {
 					if poly.coffcient[i] != nil {
 						poly.coffcient[i] = c + poly.coffcient[i]!
@@ -61,7 +61,7 @@ extension Polynomial {
 		var count = 0
 		var poly = self
 		while poly.evaluate(at: x) == Field.zero {
-			for i in (0..<poly.maxexp).reverse() {
+			for i in (0..<poly.maxexp).reversed() {
 				if let c = poly.coffcient[i + 1] {
 					if poly.coffcient[i] != nil {
 						poly.coffcient[i] = c + poly.coffcient[i]!
@@ -83,7 +83,7 @@ extension Polynomial {
 }
 
 extension Polynomial where Field: AlgebraicComplete, Field: NewtonMethodAppliable {
-	func findAllRootsTheNewtonWay(eps: Double = 1e-8) -> [(Field, Int)] {
+	func findAllRootsTheNewtonWay(_ eps: Double = 1e-8) -> [(Field, Int)] {
 		var count = 0
 		var poly = self
 		var rst: [(Field, Int)] = []

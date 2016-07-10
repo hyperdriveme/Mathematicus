@@ -14,6 +14,7 @@
 // KIND, either express or implied.  See the License for the
 // 	specific language governing permissions and limitations
 // under the License.
+
 import Foundation
 
 extension Double: Number {
@@ -36,7 +37,7 @@ extension Double: NewtonMethodAppliable {
 }
 
 extension Double: Continuum {
-	public static func realNumber(d: Double) -> Double {
+	public static func realNumber(_ d: Double) -> Double {
 		return d
 	}
 	

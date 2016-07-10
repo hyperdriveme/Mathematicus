@@ -14,11 +14,12 @@
 // KIND, either express or implied.  See the License for the
 // 	specific language governing permissions and limitations
 // under the License.
+
 import Foundation
 
 public protocol Continuum: Number {
 	
-	static func realNumber(d: Double) -> Self
+	static func realNumber(_ d: Double) -> Self
 	
 	func scale(at x:Double) -> Self
 }

@@ -14,6 +14,7 @@
 // KIND, either express or implied.  See the License for the
 // 	specific language governing permissions and limitations
 // under the License.
+
 import Foundation
 
 public struct Polynomial<Field: Number> {
@@ -28,12 +29,12 @@ public struct Polynomial<Field: Number> {
 		return Polynomial<Field>(coffcient: [0 : Field.zero], maxexp: 0)
 	}
 	
-	public static func constantPolynomial(c c: Field) -> Polynomial<Field> {
+	public static func constantPolynomial(c: Field) -> Polynomial<Field> {
 		return Polynomial<Field>(coffcient: [0 : c], maxexp: 0)
 	}
 	
 	public static func findOrder<T>(of p: [Int : T], maxiumTrial: Int) -> Int {
-		for i in (1...maxiumTrial).reverse() {
+		for i in (1...maxiumTrial).reversed() {
 			if p[i] != nil {
 				return i
 			}

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,6 @@
 		6C4FBDD71D30FB170093ECFF /* Quaternion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4FBDD61D30FB160093ECFF /* Quaternion.swift */; };
 		6CE156E91D2B888000EA162C /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE156E81D2B888000EA162C /* Complex.swift */; };
 		6CE156ED1D2B895100EA162C /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE156EC1D2B895100EA162C /* Matrix.swift */; };
-		6CE156F01D2B8A0400EA162C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE156EF1D2B8A0400EA162C /* Service.swift */; };
 		6CE156F21D2B9DBA00EA162C /* Real.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE156F11D2B9DBA00EA162C /* Real.swift */; };
 		6CE156F41D2BA4D000EA162C /* Polynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE156F31D2BA4D000EA162C /* Polynomial.swift */; };
 		6CEAD0DC1D2A6EBE00BB0BF5 /* Mathematicus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEAD0D11D2A6EBD00BB0BF5 /* Mathematicus.framework */; };
@@ -45,7 +44,6 @@
 		6C4FBDD61D30FB160093ECFF /* Quaternion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quaternion.swift; sourceTree = "<group>"; };
 		6CE156E81D2B888000EA162C /* Complex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Complex.swift; sourceTree = "<group>"; };
 		6CE156EC1D2B895100EA162C /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
-		6CE156EF1D2B8A0400EA162C /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		6CE156F11D2B9DBA00EA162C /* Real.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Real.swift; sourceTree = "<group>"; };
 		6CE156F31D2BA4D000EA162C /* Polynomial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Polynomial.swift; sourceTree = "<group>"; };
 		6CEAD0D11D2A6EBD00BB0BF5 /* Mathematicus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mathematicus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				6CEAD0EB1D2A6ED000BB0BF5 /* Mathematicus.swift */,
-				6CE156EF1D2B8A0400EA162C /* Service.swift */,
 				6C4FBDCF1D30D20B0093ECFF /* Numerics */,
 				6CE156F51D2BA4D700EA162C /* Polynomial */,
 				6CE156EE1D2B895900EA162C /* Array */,
@@ -214,21 +211,23 @@
 			attributes = {
 				CLASSPREFIX = MC;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Lithium;
 				TargetAttributes = {
 					6CEAD0D01D2A6EBD00BB0BF5 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = ZBEML43H4T;
+						LastSwiftMigration = 0800;
 					};
 					6CEAD0DA1D2A6EBE00BB0BF5 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = ZBEML43H4T;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
 			buildConfigurationList = 6CEAD0CB1D2A6EBD00BB0BF5 /* Build configuration list for PBXProject "Mathematicus" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -267,7 +266,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CE156F01D2B8A0400EA162C /* Service.swift in Sources */,
 				6CE156F21D2B9DBA00EA162C /* Real.swift in Sources */,
 				6C4FBDCA1D2FCD8B0093ECFF /* Derivative.swift in Sources */,
 				6CE156ED1D2B895100EA162C /* Matrix.swift in Sources */,
@@ -341,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -384,9 +382,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -409,6 +408,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -426,6 +426,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.Lithium.Mathematicus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -436,6 +438,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.Lithium.MathematicusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -446,6 +449,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.Lithium.MathematicusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

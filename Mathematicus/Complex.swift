@@ -14,6 +14,7 @@
 // KIND, either express or implied.  See the License for the
 // 	specific language governing permissions and limitations
 // under the License.
+
 import Foundation
 
 public struct Complex {
@@ -77,7 +78,7 @@ extension Complex: Number {
 	public static let identity = Complex(realNumber: 1.0)
 	public static let zero = Complex(realNumber: 0.0)
 	
-	public static func realNumber(d: Double) -> Complex {
+	public static func realNumber(_ d: Double) -> Complex {
 		return Complex(realNumber: d)
 	}
 }

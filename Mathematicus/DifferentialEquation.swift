@@ -18,11 +18,11 @@
 import Foundation
 
 struct OrdinaryDifferentialEquation<Field: Continuum> {
-	private let equations: Vector<Field> -> Vector<Field>
+	private let equations: (Vector<Field>) -> Vector<Field>
 	private let initial: Vector<Field>
 	private let dimension: Int
 	
-	init(dimension: Int, initial: Vector<Field>, equations: Vector<Field> -> Vector<Field>) {
+	init(dimension: Int, initial: Vector<Field>, equations: (Vector<Field>) -> Vector<Field>) {
 		guard initial.contents.count == dimension else {
 			fatalError("Not capatable initial values")
 		}
